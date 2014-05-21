@@ -11,6 +11,8 @@ public class Language extends CountryDirectory {
     public Vector  myYear;
 
     public void ChangeLanguage() {
+        myYear.add(13);
+
     }
 
 }
