@@ -19,7 +19,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        //launch(args);
-        System.out.print("Hello loozer");
+        VirtualCoin VCoin = new VirtualCoin();
+        VCoin.GetImage();
+        VCoin.Paint(Graphics g);
+
     }
 }
