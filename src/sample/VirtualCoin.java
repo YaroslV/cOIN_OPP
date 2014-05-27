@@ -5,7 +5,19 @@ package sample;
  */
 public class VirtualCoin extends RealCoin {
 
+    private BufferedImage img = null;
+
     public void GetImage() {
+
+        try {
+            img = ImageIO.read(new File("bar1.jpg"));
+        } catch (IOException e) {
+        }
     }
+
+    public void Paint(Graphics g) {
+        g.drawImage(img, 50, 50, null);
+    }
+
 
 }
