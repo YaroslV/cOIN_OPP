@@ -1,27 +1,62 @@
 package sample;
 
-import javafx.fxml.FXML;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
 import javafx.event.ActionEvent;
-import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.RectangleBuilder;
-import java.util.Random;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Controller {
-    @FXML private AnchorPane NextWindow;
-    @FXML private TextField UserNameField;
-    @FXML private AnchorPane PrevWindow;
-    @FXML protected void handleSubmitButtonAction(ActionEvent event){
-        System.out.println("Bla-bla-bla");
 
 
 
 
+    @FXML
+    private Button ShowImageButton;
+
+    @FXML
+    private ImageView image;
+
+
+
+    @FXML
+    void ShowImage(ActionEvent event) {
+
+        image.setVisible(true);
+        ShowImageButton.setVisible(false);
+        HideImageButton.setVisible(true);
 
     }
+    @FXML
+    private Button HideImageButton;
+
+    @FXML
+    void HideImage(ActionEvent event) {
+        image.setVisible(false);
+        ShowImageButton.setVisible(true);
+        HideImageButton.setVisible(false);
+    }
+
+    @FXML
+    private Button ChooseImageButton;
+    private Desktop desktop = Desktop.getDesktop();
+
+    @FXML
+    void ChooseImage(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        File file = fileChooser.showOpenDialog(null);
+        try {
+            desktop.open(file);
+        } catch (IOException e){
+            System.out.print("Error opening file");
+        }
+
+
+        }
+
 }
