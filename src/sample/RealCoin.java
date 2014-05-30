@@ -5,7 +5,7 @@ package sample;
  */
 import java.util.Vector;
 
-public class RealCoin {
+public class RealCoin  {
 
     public Vector  myUniversumCoin;
     public Vector  myRequest;

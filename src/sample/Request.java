@@ -15,7 +15,7 @@ public class Request extends Nominal {
     public void Valid() {
     }
 
-    public void Currency() {
+    public void Currency () {
     }
 
 }
