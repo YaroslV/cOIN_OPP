@@ -3,10 +3,11 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import java.awt.*;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -51,11 +52,11 @@ public class Controller {
         fileChooser.setTitle("Open Resource File");
         File file = fileChooser.showOpenDialog(null);
         try {
-            desktop.open(file);
-        } catch (IOException e){
-            System.out.print("Error opening file");
+            Image img = new Image(file.toURI().toString());
+            image.setImage(img);
+        } catch (Exception e){
+            System.out.print("Choose the file!");
         }
-
 
         }
 
